@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="text-center text-secondary d-xl-flex align-content-start mt-auto justify-content-xl-center align-items-xl-start">
+    <div id="app" class="container text-center bg-light border-info shadow-lg justify-content-center m-auto">
+        <div class="row">
+            <div class="col-xl-4 offset-xl-4">
+                <h1>Калькулятор</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 offset-xl-3 d-xl-flex justify-content-xl-center"><label class="col-form-label d-xl-flex justify-content-xl-center"><strong>Введите количество литров топлива в баке автомобиля</strong></label></div>
+            <div class="col-xl-3 offset-xl-0 d-xl-flex justify-content-xl-center align-items-xl-center"><input v-model="fuel" class="form-control-lg" type="text"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 offset-xl-3 d-xl-flex justify-content-xl-center"><label class="col-form-label d-xl-flex justify-content-xl-center"><strong>Введите километраж пройденный автомобилем за смену</strong></label></div>
+            <div class="col-xl-3 offset-xl-0 d-xl-flex justify-content-xl-center align-items-xl-center"><input v-model="distance" class="form-control-lg d-xl-flex flex-grow-1 justify-content-xl-start" type="number" min="0" placeholder="20" required="" step="5"></div>
+        </div>
+        <div class="row mb-auto">
+            <div class="col-xl-3 offset-xl-3 d-xl-flex justify-content-xl-center"><label class="col-form-label d-xl-flex justify-content-xl-center"><strong>Введите средний рассход автомобиля за смену</strong></label></div>
+            <div class="col-xl-3 offset-xl-0 d-xl-flex justify-content-xl-center align-items-xl-center"><input v-model="consumption" class="form-control-lg" type="text"></div>
+        </div>
+        <div class="row d-xl-flex mb-auto">
+            <div class="col-xl-4 offset-xl-4 d-xl-flex justify-content-center align-items-center align-content-center align-self-center justify-content-xl-center"><button v-on:click="calculate" class="btn btn-info mt-auto" type="button">Рассчитать</button></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 offset-xl-3 d-xl-flex justify-content-xl-center"><label class="col-form-label d-xl-flex justify-content-xl-center"><strong>Количество израсходованных литров</strong></label></div>
+            <div class="col-xl-3 offset-xl-0 d-xl-flex justify-content-xl-center align-items-xl-center"><p>{{ result }} (литров)</p></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 offset-xl-3 d-xl-flex justify-content-xl-center"><label class="col-form-label d-xl-flex justify-content-xl-center"><strong>Остаток в баке(Л)</strong></label></div>
+            <div class="col-xl-3 offset-xl-0 d-xl-flex justify-content-xl-center align-items-xl-center"><p>{{ balance }} (литров)</p></div>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html> 
